@@ -35,12 +35,12 @@ namespace UnityStandardAssets.Vehicles.Ball {
 				switch (pos) {
 					case 0:
 						if (Physics.Raycast(transform.position, -Vector3.up, k_GroundRayLength))
-							m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
+							m_Rigidbody.AddForce(Vector3.up * m_JumpPower);
 						break;
 
 					case 1:
 						if (Physics.Raycast(transform.position, Vector3.forward, k_GroundRayLength))
-							m_Rigidbody.AddForce(-Vector3.forward * m_JumpPower, ForceMode.Impulse);
+							m_Rigidbody.AddForce(-Vector3.forward * m_JumpPower);
 						break;
 				}
 			}
