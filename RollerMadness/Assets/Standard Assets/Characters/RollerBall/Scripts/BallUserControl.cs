@@ -36,6 +36,14 @@ namespace UnityStandardAssets.Vehicles.Ball {
 				case 1:
 					move = (v * Vector3.up + h * Vector3.right).normalized;
 					break;
+
+				case 2:
+					move = (v * Vector3.back + h * Vector3.right).normalized;
+					break;
+
+				case 3:
+					move = (v * Vector3.down + h * Vector3.right).normalized;
+					break;
 			}
 		}
 
@@ -47,14 +55,24 @@ namespace UnityStandardAssets.Vehicles.Ball {
 
 		void OnCollisionEnter(Collision collision) {
 			switch (collision.gameObject.tag) {
-				case "Chao":
+				case "baixo":
 					this.gravityVector.force = Vector3.down * this.gravityScale;
 					this.pos = 0;
 					break;
 
-				case "Parede":
+				case "frente":
 					this.gravityVector.force = Vector3.forward * this.gravityScale;
 					this.pos = 1;
+					break;
+
+				case "cima":
+					this.gravityVector.force = Vector3.up * this.gravityScale;
+					this.pos = 2;
+					break;
+
+				case "tras":
+					this.gravityVector.force = Vector3.back * this.gravityScale;
+					this.pos = 3;
 					break;
 			}
 		}

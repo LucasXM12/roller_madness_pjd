@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-namespace UnityStandardAssets.Utility
-{
-	public class SmoothFollow : MonoBehaviour
-	{
+namespace UnityStandardAssets.Utility {
+	public class SmoothFollow: MonoBehaviour {
 
 		// The target we are following
 		[SerializeField]
@@ -24,8 +22,7 @@ namespace UnityStandardAssets.Utility
 		void Start() { }
 
 		// Update is called once per frame
-		void LateUpdate()
-		{
+		void LateUpdate() {
 			// Early out if we don't have a target
 			if (!target)
 				return;
@@ -52,7 +49,7 @@ namespace UnityStandardAssets.Utility
 			transform.position -= currentRotation * Vector3.forward * distance;
 
 			// Set the height of the camera
-			transform.position = new Vector3(transform.position.x ,currentHeight , transform.position.z);
+			transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
 
 			// Always look at the target
 			transform.LookAt(target);
